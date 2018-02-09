@@ -1,87 +1,72 @@
 # React Todo App
 
-A dynamic todos application with data persistence and authentication that uses ReactJS on the frontend and Firebase for the backend.
+A dynamic todos application with data persistence and authentication that uses ReactJS on the frontend and Firebase on the backend.
 
-## Getting Started
+## Usage
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
+Install packages
 
 ```
-Give examples
+npm install
 ```
 
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+And build client.min.js bundle
 
 ```
-Give the example
+npm run build
 ```
 
-And repeat
+Now index.html can be used with the bundled javascript file to view React components.
+
+### Using Dev Server
+
+Webpack has capabilities to run the app on its server.
 
 ```
-until finished
+npm run build-server
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+And now the app can be viewed on <http://localhost:8080> by default.
 
-## Running the tests
+### Setting Up Firebase
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+Go to <https://firebase.google.com/> and "Get Started" to create unique project. Once project is created, navigate to main console and click on "Add Firebase to your web app" and the snippet should look like this:
 
 ```
-Give an example
-```
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "[My API Key]",
+    authDomain: "[my-project-name].firebaseapp.com",
+    databaseURL: "https://[my-project-name].firebaseio.com",
+    projectId: "[my-project-name]",
+    storageBucket: "[my-project-name].appspot.com",
+    messagingSenderId: "833094533555"
+  };
+  firebase.initializeApp(config);
+</script>
+``` 
 
-### And coding style tests
+Copy only the javascript and insert it into the constructor in src/js/FirebaseAPI.js and replace the similar javascript pertaining to the example Firebase backend project.
 
-Explain what these tests test and why
+It will also be required that the authentication settings be changed as well. Go to the Authentication dashboard, navigate to the 'SIGN-IN METHOD' tab and Enable the "Email/Password" Provider to be able to start signing in and creating new users within the todo app.
 
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+The app is now ready to be used and modified to build on it as a starter template for more complex applications.
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+* [ReactJS](https://reactjs.org/) - The ReactJS frontend library
+* [Firebase](https://firebase.google.com/) - Backend Tools and Infrastructure for Free with Limited Use
+* [Material-UI](http://www.material-ui.com/#/) - Awesome library of React Components that implement Google's Material design.
+* [Bootstrap 4](https://getbootstrap.com/) - Responsive front-end component library.
+* [Webpack](https://webpack.js.org/) - Bundles modules and dependencies into static assets.
+* [Babel](https://babeljs.io/) - Javascript and React Transpiler
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Titan Global Tech, LLC** - *All Work Contained* - [b1tn3r](https://github.com/b1tn3r)
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
