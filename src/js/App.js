@@ -62,7 +62,7 @@ export default class App extends React.Component {
                 <NavBar {...this.state} showLogin={this.showLogin.bind(this)} refresh={this.refresh.bind(this)}/>
 
                 { this.state.loading ?
-                    <div class="loader">
+                    <div class="main-loader">
                         <CircularProgress size={100} thickness={8} />
                     </div>
                     : null
