@@ -101,6 +101,12 @@ export default class extends React.Component {
     }
 
 
+    enterPushed(event) {
+        if(event.key === "Enter") {
+            this.signIn(event);
+        }
+    }
+
     signIn(event) {
         let username = this.state.username;
         let password = this.state.password;
@@ -230,6 +236,7 @@ export default class extends React.Component {
                             value={this.state.username}
                             onChange={this.handleChange}
                             errorText={this.state.usernameError}
+                            onKeyPress={this.enterPushed.bind(this)}
                         />
                         <br />
                         <TextField
@@ -240,6 +247,7 @@ export default class extends React.Component {
                             value={this.state.password}
                             onChange={this.handleChange}
                             errorText={this.state.passwordError}
+                            onKeyPress={this.enterPushed.bind(this)}
                         />
                         <Toggle
                             label="Create New Account"
