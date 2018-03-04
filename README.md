@@ -1,6 +1,6 @@
 # React Todo App
 
-A dynamic todos application with data persistence and authentication that uses ReactJS on the frontend and Firebase on the backend.
+A basic todos application with data persistence and authentication that uses ReactJS on the frontend and Firebase on the backend.
 
 ## Usage
 
